@@ -6,10 +6,10 @@ services:
     deploy:
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.${STAGE_NAME}.rule=Host(`${DEPLOY_URL}`)"
-        - "traefik.http.routers.${STAGE_NAME}.entrypoints=websecure"
-        - "traefik.http.routers.${STAGE_NAME}.tls.certresolver=wildcardresolver"
-        - "traefik.http.services.${STAGE_NAME}.loadbalancer.server.port=3000"
+        - "traefik.http.routers.cv-${STAGE_NAME}.rule=Host(`${DEPLOY_URL}`)"
+        - "traefik.http.routers.cv-${STAGE_NAME}.entrypoints=websecure"
+        - "traefik.http.routers.cv-${STAGE_NAME}.tls.certresolver=wildcardresolver"
+        - "traefik.http.services.cv-${STAGE_NAME}.loadbalancer.server.port=3000"
 networks:
   traefik-public:
     external: true
